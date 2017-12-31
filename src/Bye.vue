@@ -3,11 +3,20 @@ export default {
   name: 'Bye',
   data () {
     return {
-      msg: 'Bye World!'
+      list: [1,2,3,4,5]
     }
   },
   render(h) {
-    return <h1 class="bye">{ this.msg }</h1>
+    return (
+      <div>
+          <h1>Having some trouble here</h1>
+          <ul>
+            {this.list.map((value) => {
+              return <li>{value}</li>;
+            })}
+          </ul>
+      </div>
+    )
   }
 }
 </script>

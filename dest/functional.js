@@ -6214,11 +6214,20 @@ var Bye = {
   name: 'Bye',
   data: function data () {
     return {
-      msg: 'Bye World!'
+      list: [1,2,3,4,5]
     }
   },
   render: function render(h) {
-    return h( 'h1', { class: "bye" }, this.msg)
+    return (
+      h( 'div', { id: "darren" },
+          h( 'h1', null, "Having some trouble here" ),
+          h( 'ul', null,
+            this.list.map(function (value) {
+              return h( 'li', null, value );
+            })
+          )
+      )
+    )
   }
 };
 
